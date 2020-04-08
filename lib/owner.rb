@@ -32,6 +32,7 @@ class Owner
     collection = []
     Dog.all.collect{|x| if x.owner == self
       collection << x
+    end
     }
     collection
   end
