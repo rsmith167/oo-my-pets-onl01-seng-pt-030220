@@ -29,5 +29,27 @@ class Owner
   def buy_cat(name, owner)
     Cat.new(name, self)
   end
+  def buy_dog(name, owner)
+    Dog.new(name, self)
+  end
+  def walk_dogs
+    Dog.all.each {|x| x.mood = "happy"}
+  end
+  def feed_cats
+     Cat.all.each {|x| x.mood = "happy"}
+  end
+  def sell_pets
+    Dog.all.each {|x| x.mood = "nervous"
+      x.owner = nil
+    }
+    Cat.all.each {|x| 
+    x.mood = "nervous"
+      x.owner = nil
+    }
+  end
+  def list_pets
+    all_pets = Cat.all
+    all_pets << Dog.all
+  end
     
 end
