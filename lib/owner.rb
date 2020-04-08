@@ -21,7 +21,12 @@ class Owner
     return "I am a human."
   end
   def cats
-    Cat.all.collect{|x| x.owner == self}
+    collection = []
+    Cat.all.collect{|x| if x.owner == self
+      collection << x
+    end
+    }
+    collection
   end
   def dogs
     Dog.all.collect{|x| x.owner == self}
