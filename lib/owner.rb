@@ -36,10 +36,10 @@ class Owner
     }
     collection
   end
-  def buy_cat(name, owner)
+  def buy_cat(name)
     Cat.new(name, self)
   end
-  def buy_dog(name, owner)
+  def buy_dog(name)
     Dog.new(name, self)
   end
   def walk_dogs
@@ -58,9 +58,8 @@ class Owner
     }
   end
   def list_pets
-    all_pets = Cat.all
-    all_pets << Dog.all
-    all_pets
+    self.cats
+    self.dogs
   end
     
 end
