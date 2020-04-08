@@ -29,7 +29,11 @@ class Owner
     collection
   end
   def dogs
-    Dog.all.collect{|x| x.owner == self}
+    collection = []
+    Dog.all.collect{|x| if x.owner == self
+      collection << x
+    }
+    collection
   end
   def buy_cat(name, owner)
     Cat.new(name, self)
