@@ -23,4 +23,11 @@ class Owner
   def cats
     Cat.all.collect{|x| x.owner == self}
   end
+  def dogs
+    Dog.all.collect{|x| x.owner == self}
+  end
+  def buy_cat(name, owner)
+    Cat.new(name, self)
+  end
+    
 end
