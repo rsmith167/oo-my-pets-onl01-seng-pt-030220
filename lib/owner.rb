@@ -44,12 +44,13 @@ class Owner
     }
     Cat.all.each {|x| 
     x.mood = "nervous"
-      x.owner = nil
+    x.owner = nil
     }
   end
   def list_pets
     all_pets = Cat.all
     all_pets << Dog.all
+    all_pets
   end
     
 end
